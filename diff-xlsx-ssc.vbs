@@ -26,7 +26,7 @@ Set objScript = Nothing
 dim fBaseFile, fNewFile, fs, f
 Set fBaseFile = objFileSystem.GetFile(sBaseFile)
 Set fNewFile = objFileSystem.GetFile(sNewFile)
-sTempFile = "H:\temp-Git.text"
+sTempFile = "C:\temp-Git.text"
 
 'Creat temp.txt for save path of 2 xlsx files
 Set fs =Wscript.CreateObject("scripting.filesystemobject")
@@ -37,6 +37,6 @@ f.Close()
 
 ' Compare files using SPREADSHEETCOMPARE.Exe
 Set WshShell = WScript.CreateObject("WScript.Shell")
-result = WshShell.Run("""C:\Program Files (x86)\Microsoft Office\Office16\DCF\SPREADSHEETCOMPARE.exe"" H:\temp-Git.text", 0, True)
+result = WshShell.Run("""C:\Program Files (x86)\Microsoft Office\Office16\DCF\SPREADSHEETCOMPARE.exe"" " & sTempFile, 0, True)
 
 Wscript.Quit
