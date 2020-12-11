@@ -48,7 +48,11 @@ Set f = Nothing
 'Compare files using SPREADSHEETCOMPARE.exe
 Dim WshShell, result
 Set WshShell = WScript.CreateObject("WScript.Shell")
-result = WshShell.Run("""C:\Program Files (x86)\Microsoft Office\Office16\DCF\SPREADSHEETCOMPARE.exe"" " & sTempFile, 0, True)
+'Old office version 2016?
+'result = WshShell.Run("""C:\Program Files (x86)\Microsoft Office\Office16\DCF\SPREADSHEETCOMPARE.exe"" " & sTempFile, 0, True)
+'Office 365
+'Could be this result = WshShell.Run("""C:\Program Files\Microsoft Office\root\vfs\ProgramFilesX86\Microsoft Office\Office16\DCF\SPREADSHEETCOMPARE.EXE"" " & sTempFile, 0, True)
+result = WshShell.Run("""C:\Program Files (x86)\Microsoft Office\root\Office16\DCF\SPREADSHEETCOMPARE.exe"" " & sTempFile, 0, True)
 Set WshShell = Nothing
 
 WScript.Quit
